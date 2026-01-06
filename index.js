@@ -398,7 +398,7 @@
 // != inequality operator // this will return true if two values not equal
 // !== strict inequality operator // value and dayatype difffernt means retrurn true
 
-const PI = 3.14;
+// const PI = 3.14;
 
 // if(PI == "3.14") {
 //     console.log("That is Pi");
@@ -579,7 +579,6 @@ const PI = 3.14;
 
 // happyBirthday("Mani", 20);
 
-
 // function add(a, b) {
 //     let result = a + b;
 //     return result;
@@ -611,16 +610,12 @@ const PI = 3.14;
 
 // Mani#123
 
-
 // console.log(isValidEmail("mani@gmail.com"));
 // console.log(isValidEmail("mani.com"));
 
-
 // add(2, 4) = result
 
-
 // Vraibale scope - where a variable is regonised and accessible(local vs global)
-
 
 // let x = 1;
 // let x = 9;
@@ -637,13 +632,240 @@ const PI = 3.14;
 // // func1();
 // func2();
 
-
-// Array - a varibale like structure that can hold more than 1 value 
-
+// Array - a varibale like structure that can hold more than 1 value
 
 // length = 3
 // index = [0 to 2]
-let vegetables = ["carrot", "tomato", "beetroot"];
 
-console.log(vegetables);
+// let vegetables = ["carrot", "tomato", "beetroot", "coconut", "onion", "beans"];
 
+// vegetables.push("potato");
+// vegetables.pop();
+// vegetables.unshift("chilli");
+// vegetables.shift();
+
+// let numOfVeggies = vegetables.length;
+// let index = vegetables.indexOf("beetroot");
+
+// console.log(vegetables);
+// console.log(vegetables[0]);
+// console.log(vegetables[1]);
+// console.log(vegetables[2]);
+// console.log(numOfVeggies);
+// console.log(index);
+
+//vegetables[3] = "potato";
+
+//console.log(vegetables);
+
+// for
+
+//                2
+// for(let i = vegetables.length - 1; i >= 0; i--) {
+//    console.log(vegetables[i]);
+// }
+
+// for each
+
+// vegetables.sort().reverse();
+
+// for(let vegetable of vegetables) {
+//     console.log(vegetable);
+// }
+
+// spread operator - ... allow an iteration such as array or string to be expanded into spereate elements (unpack the elements)
+
+// let numbers = [1, 2, 3, 4, 5];
+
+// let maximum = Math.max(...numbers);
+
+// console.log(...numbers);
+
+// console.log(maximum);
+
+// let username = "manikandan student";
+
+// let letter = [...username].join("/");
+
+// shallow copy - means it is differnt data structue  were it contains identical value
+
+// let fruits = ["apple", "orange", "banana"];
+
+// let veggies = ["carrot", "onion", "beans"];
+
+// let foods = [...fruits, ...veggies, "eggs", "milk"];
+
+// console.log(foods);
+
+// rest parameters = (...rest) allow a function work with a variable , number of argumnets by bundling them into an array
+
+// spread - expands an arrray into seprate elements
+// rest - bundles seprate elements into an array
+
+// function openFridge(...foods) {
+//     console.log(foods);
+//     console.log(...foods);
+// }
+
+// const food1 = "veg rice";
+// const food2 = "egg rice";
+// const food3 = "Dosa";
+// const food4 = "idly";
+
+// openFridge(food1, food2, food3, food4);
+
+// function sum(...numbers) {
+//   let result = 0;
+//   for (let number of numbers) {
+//     result += number;
+//   }
+//   return result;
+// }
+// function getAverage(...numbers) {
+//   let result = 0;
+//   for (let number of numbers) {
+//     result += number;
+//   }
+//   return result;
+// }
+
+// const total = sum(1, 3, 5, 10);
+
+// console.log(`your total is ${total}`);
+
+// function combineStrings(...strings) {
+//     return strings.join(" ");
+// }
+
+
+// const fullName = combineStrings("Mr", "Mani", "student", "90191");
+
+// console.log(fullName);
+
+// callbacks - a function that is passed as an argument to another function 
+
+// used to handling asynchrouns operations
+
+// Reading a file 
+// Network requests (APIs)
+// Interacting with database 
+
+
+// Hey, when you are done, call this next 
+
+// hello(wait);
+
+// function hello(callback) {
+//     console.log("Hello");
+//     callback();
+// }
+
+// function leave() {
+//     console.log("Leave");
+// }
+
+// function wait() {
+//     console.log("Wait");
+// }
+
+// function goodBye() {
+//     console.log("goodbye");
+// }
+
+// sum(displayConsole, 10, 20);
+
+// function sum(callback, x, y) {
+//     let result = x + y;
+//     callback(result);
+// }
+
+// function displayConsole(result) {
+//   console.log(result);
+// }
+
+// function displayPage(result) {
+//      document.getElementById("myH1").textContent = result;
+// }
+
+
+// forEach - method used to iterate over the elements of an array and apply a specified function (callback) to each element 
+
+// array.forEach(callback);
+// element, Index, array are provide - the location of an array
+
+
+// let numbers = [1, 2, 3, 4, 5];
+
+// numbers.forEach(square);
+// numbers.forEach(display);
+
+// function double(element, index, array) {
+//     array[index] = element * 2;
+// }
+
+// function square(element, index, array) {
+//      array[index] = Math.pow(element, 2);
+// }
+
+// function display(element) {
+//    console.log(element);
+// }
+
+
+// let fruits = ["apple", "orange", "banana", "kiwi"];
+
+
+
+// fruits.forEach(captilise);
+// fruits.forEach(display);
+
+// function upperCase(element, index, array) {
+//    array[index] = element.toUpperCase();
+// }
+
+// function captilise(element, index, array) {
+//    array[index] = element.charAt(0).toUpperCase() + element.slice(1);
+// }
+
+// function display(element) {
+//    console.log(element);
+// }
+
+
+// .map() - accepts a callback and applies that function to each element of an array, that return a new array 
+
+
+// const numbers = [1, 2, 3, 4, 5];
+
+
+// const squares = numbers.map(square);
+
+// console.log(squares);
+
+// function square(element) {
+//     return Math.pow(element, 2);
+// }
+
+// const students = ["mani", "siva", "ganesh"];
+
+// const stuUpper = students.map(uppercase);
+
+// console.log(stuUpper);
+
+// function uppercase(element){
+//     return element.toUpperCase();  
+// }
+
+
+
+// const dates = ["2026-1-06", "2025-2-23"];
+
+// const formattedDates = dates.map(formatDates);
+
+// console.log(formattedDates);
+
+
+// function formatDates(element) {
+//     const parts = element.split("-");
+//     return `${parts[2]}/${parts[1]}/${parts[0]}`;
+// }
