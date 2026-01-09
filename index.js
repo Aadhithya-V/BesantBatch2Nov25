@@ -1034,17 +1034,15 @@
 
 // outer();
 
-// function createaCounter() {  // class 
+// function createaCounter() {  // class
 //   let count = 0;
 //   function increment() {
 //     count++;
 //     console.log(`count increased to ${count}`);
 //   }
 
-
 //   return { increment };
 // }
-
 
 //     object
 // const counter = createaCounter();
@@ -1053,16 +1051,14 @@
 // counter.increment();
 // counter.increment();
 
-
-// synchronous - Excutes line by line consecutively in a sequntail manner 
+// synchronous - Excutes line by line consecutively in a sequntail manner
 // code that wiats for an operation to compelte
 
-// Asynchronous - allow multiple operations to be performed concurrently without waiting 
+// Asynchronous - allow multiple operations to be performed concurrently without waiting
 // does not block the execution flow and allow the program to continue
 
 // I/O operations/ API Calls/ Fetching the data
 // callbacks, promises, async/await
-
 
 // setTimeout(()=>{console.log("task 1")}, 3000);
 
@@ -1070,6 +1066,40 @@
 // console.log("task 3");
 // console.log("task 4");
 
+// Callback hell - situtaion in javascript where callbacks are nested with other other call backs to the degree where the code is differt to read - old pattern to handle the async function;
+// promises  + asyn/awiat to avoid the call back hell
 
+function task1(callback) {
+  setTimeout(() => {
+    console.log("Task 1 complete");
+    callback();
+  }, 2000);
+}
+function task2(callback) {
+  setTimeout(() => {
+    console.log("Task 2 complete");
+    callback();
+  }, 1000);
+}
+function task3(callback) {
+  setTimeout(() => {
+    console.log("Task 3 complete");
+    callback();
+  }, 3000);
+}
+function task4(callback) {
+  setTimeout(() => {
+    console.log("Task 4 complete");
+    callback();
+  }, 1500);
+}
 
-
+task1(() => {
+  task2(() => {
+    task3(() => {
+      task4(() => {
+        console.log("All tasks is completed");
+      });
+    });
+  });
+});
