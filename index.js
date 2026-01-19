@@ -1069,37 +1069,135 @@
 // Callback hell - situtaion in javascript where callbacks are nested with other other call backs to the degree where the code is differt to read - old pattern to handle the async function;
 // promises  + asyn/awiat to avoid the call back hell
 
-function task1(callback) {
-  setTimeout(() => {
-    console.log("Task 1 complete");
-    callback();
-  }, 2000);
+// function task1(callback) {
+//   setTimeout(() => {
+//     console.log("Task 1 complete");
+//     callback();
+//   }, 2000);
+// }
+// function task2(callback) {
+//   setTimeout(() => {
+//     console.log("Task 2 complete");
+//     callback();
+//   }, 1000);
+// }
+// function task3(callback) {
+//   setTimeout(() => {
+//     console.log("Task 3 complete");
+//     callback();
+//   }, 3000);
+// }
+// function task4(callback) {
+//   setTimeout(() => {
+//     console.log("Task 4 complete");
+//     callback();
+//   }, 1500);
+// }
+
+// task1(() => {
+//   task2(() => {
+//     task3(() => {
+//       task4(() => {
+//         console.log("All tasks is completed");
+//       });
+//     });
+//   });
+// });
+
+// Promises - an object that manages aynchronus operations,
+
+// wrap a promise object around a asnsychrouns
+
+// "I promise to return a value"
+
+// pending --> resolved or rejected
+
+// new Promise((resolve, reject) => {asynchronous code})
+
+// do these work in order
+
+// walk the dog
+// brushing
+// bathing
+// clean the kitchen
+// take out the trash
+// go to office
+
+function walkDog() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const dogWalked = true;
+      if (dogWalked) {
+        resolve("You walked the dog");
+      } else {
+        reject("You didnt wlak the dog");
+      }
+    }, 2000);
+  });
 }
-function task2(callback) {
-  setTimeout(() => {
-    console.log("Task 2 complete");
-    callback();
-  }, 1000);
+function cleanKitchen() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const kitchenCleaned = false;
+      if (kitchenCleaned) {
+        resolve("You cleaned the kitchen");
+      } else {
+        reject("you didnt clean the kitchen");
+      }
+    }, 3000);
+  });
 }
-function task3(callback) {
-  setTimeout(() => {
-    console.log("Task 3 complete");
-    callback();
-  }, 3000);
-}
-function task4(callback) {
-  setTimeout(() => {
-    console.log("Task 4 complete");
-    callback();
-  }, 1500);
+function takeOutTrash() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const trashTakenOut = true;
+      if (trashTakenOut) {
+        resolve("You taked out the trash");
+      } else {
+        reject("you didnt take out the tarsh");
+      }
+    }, 1000);
+  });
 }
 
-task1(() => {
-  task2(() => {
-    task3(() => {
-      task4(() => {
-        console.log("All tasks is completed");
-      });
-    });
+// walkDog(() => {
+//   cleanKitchen(() => {
+//     takeOutTrash(() => {
+//       console.log("You finised all the works");
+//     });
+//   });
+// });
+
+// walkDog()
+//   .then((value) => {
+//     console.log(value);
+//     return cleanKitchen();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     return takeOutTrash();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     console.log("You finished all the works");
+//   })
+//   .catch((error) => {console.error(error)});
+
+
+
+  walkDog()
+  .then((value) => {
+    console.log(value);
+    return cleanKitchen();
+  })
+  .then((value) => {
+    console.log(value);
+    return takeOutTrash();
+  })
+  .then((value) => {
+    console.log(value);
+    console.log("you finished all work");
+  })
+  .catch((error) => {
+    console.log("ERROR:", error);
   });
-});
