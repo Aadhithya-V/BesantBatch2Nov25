@@ -1245,29 +1245,71 @@
 //   "hobbies": ["reading", "cooking", "swiming"]
 // };
 
-const jsonPeople = `[{
-    name: "aslam",
-    age: 29,
-    isEmployed: true,
-  },
-  {
-    name: "ani",
-    age: 22,
-    isEmployed: false,
-  },
-  {
-    name: "john",
-    age: 21,
-    isEmployed: false,
-  },
-  {
-    name: "kavin",
-    age: 23,
-    isEmployed: false,
-  }]`;
+// const jsonPeople = `[{
+//     name: "aslam",
+//     age: 29,
+//     isEmployed: true,
+//   },
+//   {
+//     name: "ani",
+//     age: 22,
+//     isEmployed: false,
+//   },
+//   {
+//     name: "john",
+//     age: 21,
+//     isEmployed: false,
+//   },
+//   {
+//     name: "kavin",
+//     age: 23,
+//     isEmployed: false,
+//   }]`;
 
 // const jsonString = JSON.stringify(people);
 
-const parseData = JSON.parse(jsonPeople);
+// const parseData = JSON.parse(jsonPeople);
 
-console.log(parseData);
+// console.log(parseData);
+
+// Fetch - function used for making http requests to fetch resourse or data(json, imges, files)
+
+// simpilifies asynshorius data fetching in javascript and used for interacting with APIs to retrive the data and send data asynchrously over the web
+
+// API - set of rules and protocols that allows different software applications to communicate and exchange data
+
+// server - kind of storage system in the internet
+
+// HTTP methods - GET, POST, PUT, DELETE
+
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//      .then(response => {
+//       if(!response.ok) {
+//          throw new Error("Could not fetch the data from this api or link")
+//       }
+//       return response.json();
+//      })
+//      .then(data => console.log(data))
+//      .catch(error => console.log(error));
+
+// fetchData();
+
+
+
+// async function fetchData() {
+//   try {
+//     const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+//     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+//     if(!response.ok) {
+//       throw new Error("Could not fetch the data from this api or link");
+//     }
+//     const data = await response.json();
+//     const pokemonSprite = data.sprites.front_default;
+//     const imgElement = document.getElementById("pokemonSprite");
+//     imgElement.src = pokemonSprite;
+//     imgElement.style.display = "block";
+//     console.log(data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
